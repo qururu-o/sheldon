@@ -1,0 +1,29 @@
+﻿<Application x:Class="sheldon.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:sheldon"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Lobster"></Setter>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontFamily" Value="Lobster"></Setter>
+            <Setter Property="Background" Value="#C3A273"></Setter>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="FontFamily" Value="Lobster"></Setter>
+            <Setter Property="Background" Value="#B5C292 "></Setter>
+            <Setter Property="Width" Value="200"></Setter>
+            <Setter Property="Height" Value="50"></Setter>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="FontFamily" Value="Lobster"></Setter>
+            <Setter Property="Width" Value="200"></Setter>
+            <Setter Property="Height" Value="50"></Setter>
+        </Style>
+        <Style TargetType="Grid">
+            <Setter Property="Background" Value="#FFF7E4"></Setter>
+        </Style>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище Sheldon_ChildhoodModelContainer" CdmEntityContainer="Sheldon_Childhood_AEntities">
+    <EntitySetMapping Name="Acter">
+      <EntityTypeMapping TypeName="Sheldon_ChildhoodModel.Acter">
+        <MappingFragment StoreEntitySet="Acter">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name_acter" ColumnName="Name_acter" />
+          <ScalarProperty Name="Familia_acter" ColumnName="Familia_acter" />
+          <ScalarProperty Name="Rost" ColumnName="Rost" />
+          <ScalarProperty Name="Date_of_birth_acter" ColumnName="Date_of_birth_acter" />
+          <ScalarProperty Name="id_Znak_zodiaka" ColumnName="id_Znak_zodiaka" />
+          <ScalarProperty Name="Vozrast" ColumnName="Vozrast" />
+          <ScalarProperty Name="id_Mesto_rozhenia" ColumnName="id_Mesto_rozhenia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Career">
+      <EntityTypeMapping TypeName="Sheldon_ChildhoodModel.Career">
+        <MappingFragment StoreEntitySet="Career">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name_career" ColumnName="Name_career" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Career_actera">
+      <EntityTypeMapping TypeName="Sheldon_ChildhoodModel.Career_actera">
+        <MappingFragment StoreEntitySet="Career_actera">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_Acter" ColumnName="id_Acter" />
+          <ScalarProperty Name="id_Career" ColumnName="id_Career" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Foto">
+      <EntityTypeMapping TypeName="Sheldon_ChildhoodModel.Foto">
+        <MappingFragment StoreEntitySet="Foto">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_Acter" ColumnName="id_Acter" />
+          <ScalarProperty Name="id_Personazh" ColumnName="id_Personazh" />
+          <ScalarProperty Name="Fotos" ColumnName="Fotos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Gender">
+      <EntityTypeMapping TypeName="Sheldon_ChildhoodModel.Gender">
+        <MappingFragment StoreEntitySet="Gender">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Names_gender" ColumnName="Names_gender" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Informacia_about_film">
+      <EntityTypeMapping TypeName="Sheldon_ChildhoodModel.Informacia_about_film">
+        <MappingFragment StoreEntitySet="Informacia_about_film">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Date_of_vixod_in_USA" ColumnName="Date_of_vixod_in_USA" />
+          <ScalarProperty Name="Date_of_vixod_in_Russia" ColumnName="Date_of_vixod_in_Russia" />
+          <ScalarProperty Name="Kolichestvo_sezonov" ColumnName="Kolichestvo_sezonov" />
+          <ScalarProperty Name="Kolichestvo_seria" ColumnName="Kolichestvo_seria" />
+          <ScalarProperty Name="id_Zhanr" ColumnName="id_Zhanr" />
+          <ScalarProperty Name="Opisanie_seriala" ColumnName="Opisanie_seriala" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Interesniy_fact">
+      <EntityTypeMapping TypeName="Sheldon_ChildhoodModel.Interesniy_fact">
+        <MappingFragment StoreEntitySet="Interesniy_fact">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Fact" ColumnName="Fact" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mesto_rozhenia">
+      <EntityTypeMapping TypeName="Sheldon_ChildhoodModel.Mesto_rozhenia">
+        <MappingFragment StoreEntitySet="Mesto_rozhenia">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="City_mesto_rozhenia" ColumnName="City_mesto_rozhenia" />
+          <ScalarProperty Name="State_mesto_rozhenia" ColumnName="State_mesto_rozhenia" />
+          <ScalarProperty Name="Strana_mesto_rozhenia" ColumnName="Strana_mesto_rozhenia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Nacionalnost">
+      <EntityTypeMapping TypeName="Sheldon_ChildhoodModel.Nacionalnost">
+        <MappingFragment StoreEntitySet="Nacionalnost">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Names_nacionalnost" ColumnName="Names_nacionalnost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Oblozhka">
+      <EntityTypeMapping TypeName="Sheldon_ChildhoodModel.Oblozhka">
+        <MappingFragment StoreEntitySet="Oblozhka">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_Svazannie_filmi" ColumnName="id_Svazannie_filmi" />
+          <ScalarProperty Name="Oblozhkas" ColumnName="Oblozhkas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Otzivi">
+      <EntityTypeMapping TypeName="Sheldon_ChildhoodModel.Otzivi">
+        <MappingFragment StoreEntitySet="Otzivi">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Otziv" ColumnName="Otziv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Personazh">
+      <EntityTypeMapping TypeName="Sheldon_ChildhoodModel.Personazh">
+        <MappingFragment StoreEntitySet="Personazh">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Names" ColumnName="Names" />
+          <ScalarProperty Name="Familia_personazh" ColumnName="Familia_personazh" />
+          <ScalarProperty Name="Date_of_birth" ColumnName="Date_of_birth" />
+          <ScalarProperty Name="id_Gender" ColumnName="id_Gender" />
+          <ScalarProperty Name="Iq" ColumnName="Iq" />
+          <ScalarProperty Name="id_Religia" ColumnName="id_Religia" />
+          <ScalarProperty Name="id_Nacionalnost" ColumnName="id_Nacionalnost" />
+          <ScalarProperty Name="id_Proisxozhenie" ColumnName="id_Proisxozhenie" />
+          <ScalarProperty Name="Rod_zanatiy" ColumnName="Rod_zanatiy" />
+          <ScalarProperty Name="Informacia" ColumnName="Informacia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Personazh_and_Acter">
+      <EntityTypeMapping TypeName="Sheldon_ChildhoodModel.Personazh_and_Acter">
+        <MappingFragment StoreEntitySet="Personazh_and_Acter">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_Personazh" ColumnName="id_Personazh" />
+          <ScalarProperty Name="id_Acter" ColumnName="id_Acter" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Production">
+      <EntityTypeMapping TypeName="Sheldon_ChildhoodModel.Production">
+        <MappingFragment StoreEntitySet="Production">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Familia" ColumnName="Familia" />
+          <ScalarProperty Name="Names" ColumnName="Names" />
+          <ScalarProperty Name="id_Roles" ColumnName="id_Roles" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proisxozhenie">
+      <EntityTypeMapping TypeName="Sheldon_ChildhoodModel.Proisxozhenie">
+        <MappingFragment StoreEntitySet="Proisxozhenie">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="States" ColumnName="States" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proizvodstvo">
+      <EntityTypeMapping TypeName="Sheldon_ChildhoodModel.Proizvodstvo">
+        <MappingFragment StoreEntitySet="Proizvodstvo">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name_proizvodstvo" ColumnName="Name_proizvodstvo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proizvodstvo_filma">
+      <EntityTypeMapping TypeName="Sheldon_ChildhoodModel.Proizvodstvo_filma">
+        <MappingFragment StoreEntitySet="Proizvodstvo_filma">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_Informacia_about_film" ColumnName="id_Informacia_about_film" />
+          <ScalarProperty Name="id_Proizvodstvo" ColumnName="id_Proizvodstvo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Religia">
+      <EntityTypeMapping TypeName="Sheldon_ChildhoodModel.Religia">
+        <MappingFragment StoreEntitySet="Religia">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name_religia" ColumnName="Name_religia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="Sheldon_ChildhoodModel.Roles">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Names_roles" ColumnName="Names_roles" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Seria_and_Sezon">
+      <EntityTypeMapping TypeName="Sheldon_ChildhoodModel.Seria_and_Sezon">
+        <MappingFragment StoreEntitySet="Seria_and_Sezon">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Nomer_sezona" ColumnName="Nomer_sezona" />
+          <ScalarProperty Name="Nomer_seria" ColumnName="Nomer_seria" />
+          <ScalarProperty Name="Name_seria" ColumnName="Name_seria" />
+          <ScalarProperty Name="Opisanie_seria" ColumnName="Opisanie_seria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Something">
+      <EntityTypeMapping TypeName="Sheldon_ChildhoodModel.Something">
+        <MappingFragment StoreEntitySet="Something">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Oblozhkas" ColumnName="Oblozhkas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Spravochnay_informacia">
+      <EntityTypeMapping TypeName="Sheldon_ChildhoodModel.Spravochnay_informacia">
+        <MappingFragment StoreEntitySet="Spravochnay_informacia">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_Acter" ColumnName="id_Acter" />
+          <ScalarProperty Name="Kolichestvo_filmov" ColumnName="Kolichestvo_filmov" />
+          <ScalarProperty Name="Promezhytok" ColumnName="Promezhytok" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Svazannie_filmi">
+      <EntityTypeMapping TypeName="Sheldon_ChildhoodModel.Svazannie_filmi">
+        <MappingFragment StoreEntitySet="Svazannie_filmi">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name_Svazannie_filmi" ColumnName="Name_Svazannie_filmi" />
+          <ScalarProperty Name="id_Vid" ColumnName="id_Vid" />
+          <ScalarProperty Name="Promezhytok_Svazannie_filmi" ColumnName="Promezhytok_Svazannie_filmi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Syprygi">
+      <EntityTypeMapping TypeName="Sheldon_ChildhoodModel.Syprygi">
+        <MappingFragment StoreEntitySet="Syprygi">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_Acter" ColumnName="id_Acter" />
+          <ScalarProperty Name="Name_Syprygi" ColumnName="Name_Syprygi" />
+          <ScalarProperty Name="Familia_Syprygi" ColumnName="Familia_Syprygi" />
+          <ScalarProperty Name="Kolichestvo_detey" ColumnName="Kolichestvo_detey" />
+          <ScalarProperty Name="Razvod" ColumnName="Razvod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vid">
+      <EntityTypeMapping TypeName="Sheldon_ChildhoodModel.Vid">
+        <MappingFragment StoreEntitySet="Vid">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name_vid" ColumnName="Name_vid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Video">
+      <EntityTypeMapping TypeName="Sheldon_ChildhoodModel.Video">
+        <MappingFragment StoreEntitySet="Video">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Videos" ColumnName="Videos" />
+          <ScalarProperty Name="id_Seria_and_Sezon" ColumnName="id_Seria_and_Sezon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zhanr">
+      <EntityTypeMapping TypeName="Sheldon_ChildhoodModel.Zhanr">
+        <MappingFragment StoreEntitySet="Zhanr">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name_Zhanr" ColumnName="Name_Zhanr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zhanr_actera">
+      <EntityTypeMapping TypeName="Sheldon_ChildhoodModel.Zhanr_actera">
+        <MappingFragment StoreEntitySet="Zhanr_actera">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_Acter" ColumnName="id_Acter" />
+          <ScalarProperty Name="id_Zhanr" ColumnName="id_Zhanr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Znak_zodiaka">
+      <EntityTypeMapping TypeName="Sheldon_ChildhoodModel.Znak_zodiaka">
+        <MappingFragment StoreEntitySet="Znak_zodiaka">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Names_znak_zodiaka" ColumnName="Names_znak_zodiaka" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

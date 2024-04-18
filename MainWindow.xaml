@@ -1,0 +1,30 @@
+﻿<Window x:Class="sheldon.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:sheldon"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="1000">
+
+    <ScrollViewer VerticalScrollBarVisibility="Hidden">
+        <Grid x:Name="grid" Background="LightYellow">
+
+            <Frame NavigationUIVisibility="Hidden"  x:Name="myFrame" />
+
+            <Image MouseDown="i_tema_MouseDown" Source="C:\Users\admin\OneDrive\Рабочий стол\колледж\3 курс\Новая папка\sheldon\картинки смены темы\на темную.png" HorizontalAlignment="Left" Height="67" Margin="923,0,0,0" VerticalAlignment="Top" Width="68"/>
+             <Menu Margin="0,0,944,799">
+                <MenuItem Header="--------" >
+                    <MenuItem Header="Главная" Click="SubMenuItem_Click"/>
+                    <MenuItem Header="Все эпизоды" Click="SubMenuItem_Click"/>
+                    <MenuItem Header="Актеры" Click="SubMenuItem_Click"/>
+                    <MenuItem Header="Информация о фильме" Click="SubMenuItem_Click"/>
+                    <MenuItem Header="Связанные фильмы" Click="SubMenuItem_Click"/>
+                </MenuItem>
+            </Menu>
+
+        </Grid>
+    </ScrollViewer>
+
+
+</Window>

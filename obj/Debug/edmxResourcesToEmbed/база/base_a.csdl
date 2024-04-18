@@ -1,0 +1,695 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Sheldon_ChildhoodModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Acter">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name_acter" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Familia_acter" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Rost" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Date_of_birth_acter" Type="DateTime" Precision="0" />
+    <Property Name="id_Znak_zodiaka" Type="Int32" />
+    <Property Name="Vozrast" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="id_Mesto_rozhenia" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Zhanr_actera" Relationship="Self.FK_Acter" FromRole="Acter" ToRole="Zhanr_actera" />
+    <NavigationProperty Name="Career_actera" Relationship="Self.FK_Acter1" FromRole="Acter" ToRole="Career_actera" />
+    <NavigationProperty Name="Personazh_and_Acter" Relationship="Self.FK_Acter2" FromRole="Acter" ToRole="Personazh_and_Acter" />
+    <NavigationProperty Name="Spravochnay_informacia" Relationship="Self.FK_Acter3" FromRole="Acter" ToRole="Spravochnay_informacia" />
+    <NavigationProperty Name="Syprygi" Relationship="Self.FK_Acter4" FromRole="Acter" ToRole="Syprygi" />
+    <NavigationProperty Name="Foto" Relationship="Self.FK_Acter5" FromRole="Acter" ToRole="Foto" />
+    <NavigationProperty Name="Mesto_rozhenia" Relationship="Self.FK_Mesto_rozhenia" FromRole="Acter" ToRole="Mesto_rozhenia" />
+    <NavigationProperty Name="Znak_zodiaka" Relationship="Self.FK_Znak_zodiaka" FromRole="Acter" ToRole="Znak_zodiaka" />
+  </EntityType>
+  <EntityType Name="Career">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name_career" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Career_actera" Relationship="Self.FK_Career" FromRole="Career" ToRole="Career_actera" />
+  </EntityType>
+  <EntityType Name="Career_actera">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_Acter" Type="Int32" Nullable="false" />
+    <Property Name="id_Career" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Acter" Relationship="Self.FK_Acter1" FromRole="Career_actera" ToRole="Acter" />
+    <NavigationProperty Name="Career" Relationship="Self.FK_Career" FromRole="Career_actera" ToRole="Career" />
+  </EntityType>
+  <EntityType Name="Foto">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_Acter" Type="Int32" />
+    <Property Name="id_Personazh" Type="Int32" />
+    <Property Name="Fotos" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="Acter" Relationship="Self.FK_Acter5" FromRole="Foto" ToRole="Acter" />
+    <NavigationProperty Name="Personazh" Relationship="Self.FK_Personazh1" FromRole="Foto" ToRole="Personazh" />
+  </EntityType>
+  <EntityType Name="Gender">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Names_gender" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Personazh" Relationship="Self.FK_Gender" FromRole="Gender" ToRole="Personazh" />
+  </EntityType>
+  <EntityType Name="Informacia_about_film">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date_of_vixod_in_USA" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Date_of_vixod_in_Russia" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Kolichestvo_sezonov" Type="Int32" Nullable="false" />
+    <Property Name="Kolichestvo_seria" Type="Int32" Nullable="false" />
+    <Property Name="id_Zhanr" Type="Int32" Nullable="false" />
+    <Property Name="Opisanie_seriala" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Proizvodstvo_filma" Relationship="Self.FK_Informacia_about_film" FromRole="Informacia_about_film" ToRole="Proizvodstvo_filma" />
+    <NavigationProperty Name="Zhanr" Relationship="Self.FK_Zhanr" FromRole="Informacia_about_film" ToRole="Zhanr" />
+  </EntityType>
+  <EntityType Name="Interesniy_fact">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Fact" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Mesto_rozhenia">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="City_mesto_rozhenia" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="State_mesto_rozhenia" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Strana_mesto_rozhenia" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Acter" Relationship="Self.FK_Mesto_rozhenia" FromRole="Mesto_rozhenia" ToRole="Acter" />
+  </EntityType>
+  <EntityType Name="Nacionalnost">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Names_nacionalnost" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Personazh" Relationship="Self.FK_Nacionalnost" FromRole="Nacionalnost" ToRole="Personazh" />
+  </EntityType>
+  <EntityType Name="Oblozhka">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_Svazannie_filmi" Type="Int32" Nullable="false" />
+    <Property Name="Oblozhkas" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="Svazannie_filmi" Relationship="Self.FK_Svazannie_filmi" FromRole="Oblozhka" ToRole="Svazannie_filmi" />
+  </EntityType>
+  <EntityType Name="Otzivi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Otziv" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Personazh">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Names" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Familia_personazh" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Date_of_birth" Type="DateTime" Precision="0" />
+    <Property Name="id_Gender" Type="Int32" Nullable="false" />
+    <Property Name="Iq" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="id_Religia" Type="Int32" />
+    <Property Name="id_Nacionalnost" Type="Int32" />
+    <Property Name="id_Proisxozhenie" Type="Int32" />
+    <Property Name="Rod_zanatiy" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Informacia" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Foto" Relationship="Self.FK_Personazh1" FromRole="Personazh" ToRole="Foto" />
+    <NavigationProperty Name="Gender" Relationship="Self.FK_Gender" FromRole="Personazh" ToRole="Gender" />
+    <NavigationProperty Name="Nacionalnost" Relationship="Self.FK_Nacionalnost" FromRole="Personazh" ToRole="Nacionalnost" />
+    <NavigationProperty Name="Personazh_and_Acter" Relationship="Self.FK_Personazh" FromRole="Personazh" ToRole="Personazh_and_Acter" />
+    <NavigationProperty Name="Proisxozhenie" Relationship="Self.FK_Proisxozhenie" FromRole="Personazh" ToRole="Proisxozhenie" />
+    <NavigationProperty Name="Religia" Relationship="Self.FK_Religia" FromRole="Personazh" ToRole="Religia" />
+  </EntityType>
+  <EntityType Name="Personazh_and_Acter">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_Personazh" Type="Int32" Nullable="false" />
+    <Property Name="id_Acter" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Acter" Relationship="Self.FK_Acter2" FromRole="Personazh_and_Acter" ToRole="Acter" />
+    <NavigationProperty Name="Personazh" Relationship="Self.FK_Personazh" FromRole="Personazh_and_Acter" ToRole="Personazh" />
+  </EntityType>
+  <EntityType Name="Production">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Familia" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Names" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="id_Roles" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Roles" Relationship="Self.FK_Roles" FromRole="Production" ToRole="Roles" />
+  </EntityType>
+  <EntityType Name="Proisxozhenie">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="City" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="States" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Personazh" Relationship="Self.FK_Proisxozhenie" FromRole="Proisxozhenie" ToRole="Personazh" />
+  </EntityType>
+  <EntityType Name="Proizvodstvo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name_proizvodstvo" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Proizvodstvo_filma" Relationship="Self.FK_Proizvodstvo" FromRole="Proizvodstvo" ToRole="Proizvodstvo_filma" />
+  </EntityType>
+  <EntityType Name="Proizvodstvo_filma">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_Informacia_about_film" Type="Int32" Nullable="false" />
+    <Property Name="id_Proizvodstvo" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Informacia_about_film" Relationship="Self.FK_Informacia_about_film" FromRole="Proizvodstvo_filma" ToRole="Informacia_about_film" />
+    <NavigationProperty Name="Proizvodstvo" Relationship="Self.FK_Proizvodstvo" FromRole="Proizvodstvo_filma" ToRole="Proizvodstvo" />
+  </EntityType>
+  <EntityType Name="Religia">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name_religia" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Personazh" Relationship="Self.FK_Religia" FromRole="Religia" ToRole="Personazh" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Names_roles" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Production" Relationship="Self.FK_Roles" FromRole="Roles" ToRole="Production" />
+  </EntityType>
+  <EntityType Name="Seria_and_Sezon">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nomer_sezona" Type="Int32" />
+    <Property Name="Nomer_seria" Type="Int32" />
+    <Property Name="Name_seria" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Opisanie_seria" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Video" Relationship="Self.FK_Seria_and_Sezon" FromRole="Seria_and_Sezon" ToRole="Video" />
+  </EntityType>
+  <EntityType Name="Something">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Oblozhkas" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Spravochnay_informacia">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_Acter" Type="Int32" Nullable="false" />
+    <Property Name="Kolichestvo_filmov" Type="Int32" />
+    <Property Name="Promezhytok" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Acter" Relationship="Self.FK_Acter3" FromRole="Spravochnay_informacia" ToRole="Acter" />
+  </EntityType>
+  <EntityType Name="Svazannie_filmi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name_Svazannie_filmi" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="id_Vid" Type="Int32" Nullable="false" />
+    <Property Name="Promezhytok_Svazannie_filmi" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Oblozhka" Relationship="Self.FK_Svazannie_filmi" FromRole="Svazannie_filmi" ToRole="Oblozhka" />
+    <NavigationProperty Name="Vid" Relationship="Self.FK_Vid" FromRole="Svazannie_filmi" ToRole="Vid" />
+  </EntityType>
+  <EntityType Name="Syprygi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_Acter" Type="Int32" Nullable="false" />
+    <Property Name="Name_Syprygi" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Familia_Syprygi" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Kolichestvo_detey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Razvod" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Acter" Relationship="Self.FK_Acter4" FromRole="Syprygi" ToRole="Acter" />
+  </EntityType>
+  <EntityType Name="Vid">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name_vid" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Svazannie_filmi" Relationship="Self.FK_Vid" FromRole="Vid" ToRole="Svazannie_filmi" />
+  </EntityType>
+  <EntityType Name="Video">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Videos" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="id_Seria_and_Sezon" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Seria_and_Sezon" Relationship="Self.FK_Seria_and_Sezon" FromRole="Video" ToRole="Seria_and_Sezon" />
+  </EntityType>
+  <EntityType Name="Zhanr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name_Zhanr" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Informacia_about_film" Relationship="Self.FK_Zhanr" FromRole="Zhanr" ToRole="Informacia_about_film" />
+    <NavigationProperty Name="Zhanr_actera" Relationship="Self.FK_Zhanr1" FromRole="Zhanr" ToRole="Zhanr_actera" />
+  </EntityType>
+  <EntityType Name="Zhanr_actera">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_Acter" Type="Int32" Nullable="false" />
+    <Property Name="id_Zhanr" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Acter" Relationship="Self.FK_Acter" FromRole="Zhanr_actera" ToRole="Acter" />
+    <NavigationProperty Name="Zhanr" Relationship="Self.FK_Zhanr1" FromRole="Zhanr_actera" ToRole="Zhanr" />
+  </EntityType>
+  <EntityType Name="Znak_zodiaka">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Names_znak_zodiaka" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Acter" Relationship="Self.FK_Znak_zodiaka" FromRole="Znak_zodiaka" ToRole="Acter" />
+  </EntityType>
+  <Association Name="FK_Acter">
+    <End Role="Acter" Type="Self.Acter" Multiplicity="1" />
+    <End Role="Zhanr_actera" Type="Self.Zhanr_actera" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acter">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Zhanr_actera">
+        <PropertyRef Name="id_Acter" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Acter1">
+    <End Role="Acter" Type="Self.Acter" Multiplicity="1" />
+    <End Role="Career_actera" Type="Self.Career_actera" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acter">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Career_actera">
+        <PropertyRef Name="id_Acter" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Acter2">
+    <End Role="Acter" Type="Self.Acter" Multiplicity="1" />
+    <End Role="Personazh_and_Acter" Type="Self.Personazh_and_Acter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acter">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Personazh_and_Acter">
+        <PropertyRef Name="id_Acter" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Acter3">
+    <End Role="Acter" Type="Self.Acter" Multiplicity="1" />
+    <End Role="Spravochnay_informacia" Type="Self.Spravochnay_informacia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acter">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Spravochnay_informacia">
+        <PropertyRef Name="id_Acter" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Acter4">
+    <End Role="Acter" Type="Self.Acter" Multiplicity="1" />
+    <End Role="Syprygi" Type="Self.Syprygi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acter">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Syprygi">
+        <PropertyRef Name="id_Acter" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Acter5">
+    <End Role="Acter" Type="Self.Acter" Multiplicity="0..1" />
+    <End Role="Foto" Type="Self.Foto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acter">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Foto">
+        <PropertyRef Name="id_Acter" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Mesto_rozhenia">
+    <End Role="Mesto_rozhenia" Type="Self.Mesto_rozhenia" Multiplicity="1" />
+    <End Role="Acter" Type="Self.Acter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mesto_rozhenia">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Acter">
+        <PropertyRef Name="id_Mesto_rozhenia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Znak_zodiaka">
+    <End Role="Znak_zodiaka" Type="Self.Znak_zodiaka" Multiplicity="0..1" />
+    <End Role="Acter" Type="Self.Acter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Znak_zodiaka">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Acter">
+        <PropertyRef Name="id_Znak_zodiaka" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Career">
+    <End Role="Career" Type="Self.Career" Multiplicity="1" />
+    <End Role="Career_actera" Type="Self.Career_actera" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Career">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Career_actera">
+        <PropertyRef Name="id_Career" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Personazh1">
+    <End Role="Personazh" Type="Self.Personazh" Multiplicity="0..1" />
+    <End Role="Foto" Type="Self.Foto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personazh">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Foto">
+        <PropertyRef Name="id_Personazh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Gender">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Personazh" Type="Self.Personazh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Personazh">
+        <PropertyRef Name="id_Gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Informacia_about_film">
+    <End Role="Informacia_about_film" Type="Self.Informacia_about_film" Multiplicity="1" />
+    <End Role="Proizvodstvo_filma" Type="Self.Proizvodstvo_filma" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Informacia_about_film">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Proizvodstvo_filma">
+        <PropertyRef Name="id_Informacia_about_film" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Zhanr">
+    <End Role="Zhanr" Type="Self.Zhanr" Multiplicity="1" />
+    <End Role="Informacia_about_film" Type="Self.Informacia_about_film" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Zhanr">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Informacia_about_film">
+        <PropertyRef Name="id_Zhanr" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Nacionalnost">
+    <End Role="Nacionalnost" Type="Self.Nacionalnost" Multiplicity="0..1" />
+    <End Role="Personazh" Type="Self.Personazh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nacionalnost">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Personazh">
+        <PropertyRef Name="id_Nacionalnost" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Svazannie_filmi">
+    <End Role="Svazannie_filmi" Type="Self.Svazannie_filmi" Multiplicity="1" />
+    <End Role="Oblozhka" Type="Self.Oblozhka" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Svazannie_filmi">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Oblozhka">
+        <PropertyRef Name="id_Svazannie_filmi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Personazh">
+    <End Role="Personazh" Type="Self.Personazh" Multiplicity="1" />
+    <End Role="Personazh_and_Acter" Type="Self.Personazh_and_Acter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personazh">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Personazh_and_Acter">
+        <PropertyRef Name="id_Personazh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Proisxozhenie">
+    <End Role="Proisxozhenie" Type="Self.Proisxozhenie" Multiplicity="0..1" />
+    <End Role="Personazh" Type="Self.Personazh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proisxozhenie">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Personazh">
+        <PropertyRef Name="id_Proisxozhenie" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Religia">
+    <End Role="Religia" Type="Self.Religia" Multiplicity="0..1" />
+    <End Role="Personazh" Type="Self.Personazh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Religia">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Personazh">
+        <PropertyRef Name="id_Religia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Roles">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+    <End Role="Production" Type="Self.Production" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Production">
+        <PropertyRef Name="id_Roles" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Proizvodstvo">
+    <End Role="Proizvodstvo" Type="Self.Proizvodstvo" Multiplicity="1" />
+    <End Role="Proizvodstvo_filma" Type="Self.Proizvodstvo_filma" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proizvodstvo">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Proizvodstvo_filma">
+        <PropertyRef Name="id_Proizvodstvo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Seria_and_Sezon">
+    <End Role="Seria_and_Sezon" Type="Self.Seria_and_Sezon" Multiplicity="1" />
+    <End Role="Video" Type="Self.Video" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Seria_and_Sezon">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Video">
+        <PropertyRef Name="id_Seria_and_Sezon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vid">
+    <End Role="Vid" Type="Self.Vid" Multiplicity="1" />
+    <End Role="Svazannie_filmi" Type="Self.Svazannie_filmi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vid">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Svazannie_filmi">
+        <PropertyRef Name="id_Vid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Zhanr1">
+    <End Role="Zhanr" Type="Self.Zhanr" Multiplicity="1" />
+    <End Role="Zhanr_actera" Type="Self.Zhanr_actera" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Zhanr">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Zhanr_actera">
+        <PropertyRef Name="id_Zhanr" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Sheldon_Childhood_AEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Acter" EntityType="Self.Acter" />
+    <EntitySet Name="Career" EntityType="Self.Career" />
+    <EntitySet Name="Career_actera" EntityType="Self.Career_actera" />
+    <EntitySet Name="Foto" EntityType="Self.Foto" />
+    <EntitySet Name="Gender" EntityType="Self.Gender" />
+    <EntitySet Name="Informacia_about_film" EntityType="Self.Informacia_about_film" />
+    <EntitySet Name="Interesniy_fact" EntityType="Self.Interesniy_fact" />
+    <EntitySet Name="Mesto_rozhenia" EntityType="Self.Mesto_rozhenia" />
+    <EntitySet Name="Nacionalnost" EntityType="Self.Nacionalnost" />
+    <EntitySet Name="Oblozhka" EntityType="Self.Oblozhka" />
+    <EntitySet Name="Otzivi" EntityType="Self.Otzivi" />
+    <EntitySet Name="Personazh" EntityType="Self.Personazh" />
+    <EntitySet Name="Personazh_and_Acter" EntityType="Self.Personazh_and_Acter" />
+    <EntitySet Name="Production" EntityType="Self.Production" />
+    <EntitySet Name="Proisxozhenie" EntityType="Self.Proisxozhenie" />
+    <EntitySet Name="Proizvodstvo" EntityType="Self.Proizvodstvo" />
+    <EntitySet Name="Proizvodstvo_filma" EntityType="Self.Proizvodstvo_filma" />
+    <EntitySet Name="Religia" EntityType="Self.Religia" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" />
+    <EntitySet Name="Seria_and_Sezon" EntityType="Self.Seria_and_Sezon" />
+    <EntitySet Name="Something" EntityType="Self.Something" />
+    <EntitySet Name="Spravochnay_informacia" EntityType="Self.Spravochnay_informacia" />
+    <EntitySet Name="Svazannie_filmi" EntityType="Self.Svazannie_filmi" />
+    <EntitySet Name="Syprygi" EntityType="Self.Syprygi" />
+    <EntitySet Name="Vid" EntityType="Self.Vid" />
+    <EntitySet Name="Video" EntityType="Self.Video" />
+    <EntitySet Name="Zhanr" EntityType="Self.Zhanr" />
+    <EntitySet Name="Zhanr_actera" EntityType="Self.Zhanr_actera" />
+    <EntitySet Name="Znak_zodiaka" EntityType="Self.Znak_zodiaka" />
+    <AssociationSet Name="FK_Acter" Association="Self.FK_Acter">
+      <End Role="Acter" EntitySet="Acter" />
+      <End Role="Zhanr_actera" EntitySet="Zhanr_actera" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Acter1" Association="Self.FK_Acter1">
+      <End Role="Acter" EntitySet="Acter" />
+      <End Role="Career_actera" EntitySet="Career_actera" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Acter2" Association="Self.FK_Acter2">
+      <End Role="Acter" EntitySet="Acter" />
+      <End Role="Personazh_and_Acter" EntitySet="Personazh_and_Acter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Acter3" Association="Self.FK_Acter3">
+      <End Role="Acter" EntitySet="Acter" />
+      <End Role="Spravochnay_informacia" EntitySet="Spravochnay_informacia" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Acter4" Association="Self.FK_Acter4">
+      <End Role="Acter" EntitySet="Acter" />
+      <End Role="Syprygi" EntitySet="Syprygi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Acter5" Association="Self.FK_Acter5">
+      <End Role="Acter" EntitySet="Acter" />
+      <End Role="Foto" EntitySet="Foto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mesto_rozhenia" Association="Self.FK_Mesto_rozhenia">
+      <End Role="Mesto_rozhenia" EntitySet="Mesto_rozhenia" />
+      <End Role="Acter" EntitySet="Acter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Znak_zodiaka" Association="Self.FK_Znak_zodiaka">
+      <End Role="Znak_zodiaka" EntitySet="Znak_zodiaka" />
+      <End Role="Acter" EntitySet="Acter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Career" Association="Self.FK_Career">
+      <End Role="Career" EntitySet="Career" />
+      <End Role="Career_actera" EntitySet="Career_actera" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Personazh1" Association="Self.FK_Personazh1">
+      <End Role="Personazh" EntitySet="Personazh" />
+      <End Role="Foto" EntitySet="Foto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Gender" Association="Self.FK_Gender">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Personazh" EntitySet="Personazh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Informacia_about_film" Association="Self.FK_Informacia_about_film">
+      <End Role="Informacia_about_film" EntitySet="Informacia_about_film" />
+      <End Role="Proizvodstvo_filma" EntitySet="Proizvodstvo_filma" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Zhanr" Association="Self.FK_Zhanr">
+      <End Role="Zhanr" EntitySet="Zhanr" />
+      <End Role="Informacia_about_film" EntitySet="Informacia_about_film" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Nacionalnost" Association="Self.FK_Nacionalnost">
+      <End Role="Nacionalnost" EntitySet="Nacionalnost" />
+      <End Role="Personazh" EntitySet="Personazh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Svazannie_filmi" Association="Self.FK_Svazannie_filmi">
+      <End Role="Svazannie_filmi" EntitySet="Svazannie_filmi" />
+      <End Role="Oblozhka" EntitySet="Oblozhka" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Personazh" Association="Self.FK_Personazh">
+      <End Role="Personazh" EntitySet="Personazh" />
+      <End Role="Personazh_and_Acter" EntitySet="Personazh_and_Acter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Proisxozhenie" Association="Self.FK_Proisxozhenie">
+      <End Role="Proisxozhenie" EntitySet="Proisxozhenie" />
+      <End Role="Personazh" EntitySet="Personazh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Religia" Association="Self.FK_Religia">
+      <End Role="Religia" EntitySet="Religia" />
+      <End Role="Personazh" EntitySet="Personazh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Roles" Association="Self.FK_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Production" EntitySet="Production" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Proizvodstvo" Association="Self.FK_Proizvodstvo">
+      <End Role="Proizvodstvo" EntitySet="Proizvodstvo" />
+      <End Role="Proizvodstvo_filma" EntitySet="Proizvodstvo_filma" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Seria_and_Sezon" Association="Self.FK_Seria_and_Sezon">
+      <End Role="Seria_and_Sezon" EntitySet="Seria_and_Sezon" />
+      <End Role="Video" EntitySet="Video" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vid" Association="Self.FK_Vid">
+      <End Role="Vid" EntitySet="Vid" />
+      <End Role="Svazannie_filmi" EntitySet="Svazannie_filmi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Zhanr1" Association="Self.FK_Zhanr1">
+      <End Role="Zhanr" EntitySet="Zhanr" />
+      <End Role="Zhanr_actera" EntitySet="Zhanr_actera" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
