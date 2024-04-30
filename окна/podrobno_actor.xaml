@@ -7,9 +7,15 @@
         mc:Ignorable="d"
         Title="podrobno_actor" Height="450" Width="800">
     <Grid x:Name="grid">
-        <StackPanel Orientation="Horizontal">
-            <StackPanel x:Name="s_p"></StackPanel>
-            <StackPanel x:Name="s_p2"></StackPanel>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <StackPanel  x:Name="s_p"></StackPanel>
+            <StackPanel HorizontalAlignment="Center" x:Name="s_p3"></StackPanel>
         </StackPanel>
+            
+            <StackPanel Grid.Column="2" x:Name="s_p2"></StackPanel>
     </Grid>
 </Window>

@@ -28,6 +28,9 @@ namespace sheldon.страницы
     public partial class infa_ob_actor : Page
     {
         string connect, f_a, f_p, i_a, i_p;
+
+       
+
         int k_v_akt, ID;
         public infa_ob_actor()
         {

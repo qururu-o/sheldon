@@ -254,9 +254,7 @@
   <ItemGroup>
     <Resource Include="картинки смены темы\на светлую.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="картинки\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="база\base_a.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -268,6 +266,8 @@
       <DependentUpon>base_a.edmx</DependentUpon>
       <LastGenOutput>base_a.cs</LastGenOutput>
     </Content>
+    <Resource Include="картинки\DVDPlayer_22688.png" />
+    <Resource Include="картинки\back_arrow_5821.png" />
     <Resource Include="картинки смены темы\pngwing.com %282%29.png" />
     <Resource Include="картинки смены темы\1c460049-8c59-4a47-bc80-f41dfe8823fb.jpg" />
   </ItemGroup>

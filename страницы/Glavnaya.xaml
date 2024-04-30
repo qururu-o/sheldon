@@ -5,32 +5,37 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:sheldon.страницы"
       mc:Ignorable="d" 
-      d:DesignHeight="600" d:DesignWidth="1000"
+      d:DesignHeight="650" d:DesignWidth="1300"
       Title="Glavnaya">
 
-    <Grid>
-        <ScrollViewer VerticalScrollBarVisibility="Hidden">
-            <Grid x:Name="grid" Background="LightYellow">
-                <MediaElement x:Name="video" Margin="76,186,334,337"/>
-                <Label Content="Без подписки вам доступны первые 3 серии 1 сезона" HorizontalAlignment="Left" Margin="193,493,0,0" VerticalAlignment="Top" Height="22" Width="307"/>
-                <Image Stretch="UniformToFill"  Source="C:\Users\admin\OneDrive\Рабочий стол\колледж\3 курс\Новая папка\sheldon\картинки смены темы\1c460049-8c59-4a47-bc80-f41dfe8823fb.jpg" x:Name="i_shapka" HorizontalAlignment="Left" Margin="68,0,0,0" VerticalAlignment="Top" Height="184" Width="605" RenderTransformOrigin="0.501,0.592"/>
-                <TextBlock x:Name="opisanie" HorizontalAlignment="Left" Margin="49,562,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="134" Width="624"/>
-                <TextBox  x:Name="tbx_otzivi" HorizontalAlignment="Left" Margin="747,447,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="105" Width="209"/>
-                <TextBox x:Name="tbk_vash_otziv" HorizontalAlignment="Left" Margin="747,606,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="209" Height="46"/>
-                <TextBlock Background="#B5C292" HorizontalAlignment="Left" Height="281" Margin="756,99,0,0" FontSize="15" TextWrapping="Wrap" Text="&#10;&#10;&#10;&#10;&#10;          Для доступа всех&#10;          серий оформите &#10;                подписку &#10;&#10;&#10;               399 руб/мес &#10;&#10;&#10;             !    !    !    !    !
+    <ScrollViewer VerticalScrollBarVisibility="Hidden">
+        <Grid x:Name="grid" Background="LightYellow" Height="751">
+            <Label FontSize="10" Content="Без подписки вам доступны первые 3 серии 1 сезона" HorizontalAlignment="Left" Margin="193,493,0,0" VerticalAlignment="Top" Height="40" Width="307"/>
+            <Image Stretch="UniformToFill"  Source="C:\Users\admin\OneDrive\Рабочий стол\колледж\3 курс\Новая папка\sheldon\картинки смены темы\1c460049-8c59-4a47-bc80-f41dfe8823fb.jpg" x:Name="i_shapka" HorizontalAlignment="Left" Margin="68,0,0,0" VerticalAlignment="Top" Height="184" Width="605" RenderTransformOrigin="0.501,0.592"/>
+            <TextBlock x:Name="opisanie" Background="#C3A273" HorizontalAlignment="Left" Margin="49,562,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="134" Width="624"/>
+            <TextBox  x:Name="tbx_otzivi" HorizontalAlignment="Left" Margin="747,447,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="105" Width="209"/>
+            <TextBox x:Name="tbk_vash_otziv" HorizontalAlignment="Left" Margin="747,606,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="209" Height="46"/>
+            <TextBlock Background="#B5C292" HorizontalAlignment="Left" Height="281" Margin="756,99,0,0" FontSize="20" TextWrapping="Wrap" Text="&#10;&#10;&#10;&#10;       Для доступа всех&#10;         серий оформите &#10;               подписку &#10;&#10;            399 руб/мес &#10;&#10;           !    !    !    !    !
 " VerticalAlignment="Top" Width="190"/>
-                <Button Content="Подписка" x:Name="bt_podpiska" Click="bt_podpiska_Click" Background="White" HorizontalAlignment="Left" Height="22" Margin="789,116,0,0" VerticalAlignment="Top" Width="129"/>
-                <Image Source="C:\Users\admin\OneDrive\Рабочий стол\колледж\3 курс\Новая папка\sheldon\картинки смены темы\pngwing.com (2).png" HorizontalAlignment="Left" Height="30" Margin="747,413,0,0" VerticalAlignment="Top" Width="30"/>
-                <Image Source="C:\Users\admin\OneDrive\Рабочий стол\колледж\3 курс\Новая папка\sheldon\картинки смены темы\pngwing.com (2).png" HorizontalAlignment="Left" Height="30" Margin="747,576,0,0" VerticalAlignment="Top" Width="30"/>
-                <Label Content="Ваш отзыв"  FontSize="17" HorizontalAlignment="Left" Margin="782,578,0,0" VerticalAlignment="Top" Height="26" Width="195"/>
-                <Label Content="Отзывы" FontSize="17" HorizontalAlignment="Left" Margin="782,415,0,0" VerticalAlignment="Top" Height="26" Width="195"/>
-                <Button Content="Опубликовать" x:Name="bt_opublik" Click="bt_opublik_Click" HorizontalAlignment="Left" Height="23" Margin="789,680,0,0" VerticalAlignment="Top" Width="110"/>
-                <Label Content="Описание сериала"  FontSize="17" HorizontalAlignment="Left" Margin="49,520,0,0" VerticalAlignment="Top" Height="26" Width="195"/>
-               
+            <Button Content="Подписка" x:Name="bt_podpiska" Click="bt_podpiska_Click" Background="White" HorizontalAlignment="Left" Height="22" Margin="789,116,0,0" VerticalAlignment="Top" Width="129"/>
+            <Image Source="C:\Users\admin\OneDrive\Рабочий стол\колледж\3 курс\Новая папка\sheldon\картинки смены темы\pngwing.com (2).png" HorizontalAlignment="Left" Height="30" Margin="747,413,0,0" VerticalAlignment="Top" Width="30"/>
+            <Image Source="C:\Users\admin\OneDrive\Рабочий стол\колледж\3 курс\Новая папка\sheldon\картинки смены темы\pngwing.com (2).png" HorizontalAlignment="Left" Height="30" Margin="747,576,0,0" VerticalAlignment="Top" Width="30"/>
+            <Label Content="Ваш отзыв"  FontSize="17" HorizontalAlignment="Left" Margin="782,578,0,0" VerticalAlignment="Top" Height="26" Width="195"/>
+            <Label Content="Отзывы" FontSize="17" HorizontalAlignment="Left" Margin="782,415,0,0" VerticalAlignment="Top" Height="26" Width="195"/>
+            <Button Content="Опубликовать" x:Name="bt_opublik" Click="bt_opublik_Click" HorizontalAlignment="Left" Height="23" Margin="789,680,0,0" VerticalAlignment="Top" Width="110"/>
+            <Label Content="Описание сериала"  FontSize="17" HorizontalAlignment="Left" Margin="49,520,0,0" VerticalAlignment="Top" Height="32" Width="195"/>
 
-            </Grid>
-        </ScrollViewer>
+            <StackPanel x:Name="vvvvv" HorizontalAlignment="Left" Height="308" Margin="71,180,0,0" VerticalAlignment="Top" Width="602">
+                <MediaElement MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"  x:Name="mediaElement"></MediaElement>
+            </StackPanel>
+
+            <Image MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" x:Name="pleer" MouseLeftButtonDown="pleer_MouseLeftButtonDown" HorizontalAlignment="Left" Visibility="Hidden" Margin="351,300,0,0" VerticalAlignment="Top"  Height="55" Width="65"  Source="C:\Users\admin\OneDrive\Рабочий стол\колледж\3 курс\Новая папка\sheldon\картинки\DVDPlayer_22688.png"/>
+            <ComboBox MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" SelectionChanged="seriya_SelectionChanged" x:Name="seriya" Visibility="Hidden" HorizontalAlignment="Left" Height="30" Margin="91,203,0,0" VerticalAlignment="Top" Width="100"/>
+            <ComboBox MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" x:Name="seson" Visibility="Hidden" HorizontalAlignment="Left" Height="30" Margin="221,203,0,0" VerticalAlignment="Top" Width="100"/>
 
 
-    </Grid>
+
+        </Grid>
+    </ScrollViewer>
+
 </Page>

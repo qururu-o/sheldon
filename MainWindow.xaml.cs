@@ -51,7 +51,10 @@ namespace sheldon
                 }
             }
         }
-
+        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            myFrame.Navigate(new Glavnaya());
+        }
         private void i_tema_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (grid.Background == Brushes.LightYellow)
@@ -64,6 +67,9 @@ namespace sheldon
             hui.Show();
         }
 
-    
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

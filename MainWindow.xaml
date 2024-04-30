@@ -5,21 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:sheldon"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="1000">
-
+        Title="MainWindow" Height="594" Width="1150" MaxHeight="600" MaxWidth="1150">
     <ScrollViewer VerticalScrollBarVisibility="Hidden">
-        <Grid x:Name="grid" Background="LightYellow">
+        <Grid Background="#FFF7E4" x:Name="grid"  Height="578" >
 
-            <Frame NavigationUIVisibility="Hidden"  x:Name="myFrame" />
+            <Image MouseDown="Image_MouseDown" Source="C:\Users\admin\OneDrive\Рабочий стол\колледж\3 курс\Новая папка\sheldon\картинки\back_arrow_5821.png" Margin="84,6,994,517"/>
 
-            <Image MouseDown="i_tema_MouseDown" Source="C:\Users\admin\OneDrive\Рабочий стол\колледж\3 курс\Новая папка\sheldon\картинки смены темы\на темную.png" HorizontalAlignment="Left" Height="67" Margin="923,0,0,0" VerticalAlignment="Top" Width="68"/>
-             <Menu Margin="0,0,944,799">
-                <MenuItem Header="--------" >
-                    <MenuItem Header="Главная" Click="SubMenuItem_Click"/>
-                    <MenuItem Header="Все эпизоды" Click="SubMenuItem_Click"/>
-                    <MenuItem Header="Актеры" Click="SubMenuItem_Click"/>
-                    <MenuItem Header="Информация о фильме" Click="SubMenuItem_Click"/>
-                    <MenuItem Header="Связанные фильмы" Click="SubMenuItem_Click"/>
+            <Frame Background="#FFF7E4" NavigationUIVisibility="Hidden"  x:Name="myFrame" Margin="73,67,11,10" Grid.Column="1" />
+
+            <Image MouseDown="i_tema_MouseDown" Source="C:\Users\admin\OneDrive\Рабочий стол\колледж\3 курс\Новая папка\sheldon\картинки смены темы\на темную.png" HorizontalAlignment="Left" Height="67" Margin="1056,0,0,0" VerticalAlignment="Top" Width="85"/>
+            <Menu Background="#B5C292" Margin="0,13,1086,515" HorizontalAlignment="Right" Width="64">
+                <MenuItem Background="#B5C292" Header="_____________________&#10;____________________&#10;___________________" Height="49" Click="MenuItem_Click" >
+                    <MenuItem  Background="#B5C292" Header="Главная" Click="SubMenuItem_Click"/>
+                    <MenuItem  Background="#B5C292" Header="Все эпизоды" Click="SubMenuItem_Click"/>
+                    <MenuItem   Background="#B5C292" Header="Актеры" Click="SubMenuItem_Click"/>
+                    <MenuItem  Background="#B5C292" Header="Информация о фильме" Click="SubMenuItem_Click"/>
+                    <MenuItem  Background="#B5C292" Header="Связанные фильмы" Click="SubMenuItem_Click"/>
                 </MenuItem>
             </Menu>
 
