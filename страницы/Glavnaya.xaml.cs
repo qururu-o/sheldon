@@ -13,6 +13,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -139,18 +140,7 @@ namespace sheldon.страницы
             seriya.Visibility = Visibility.Hidden;
             seson.Visibility = Visibility.Hidden;
         }
-
-        private void pleer_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            if (mediaElement.IsLoaded == false)
-            {
-                mediaElement.Play();
-            }
-            else
-            {
-                mediaElement.Stop();
-            }
-        }
+       
         
         private void seriya_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -184,6 +174,18 @@ namespace sheldon.страницы
             }
            
            
+        }
+
+        private void pleer_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            //if (mediaElement.CurrentState == MediaElementState.Playing)
+            //{
+                mediaElement.Pause();
+            //}
+            //else
+            //{
+            //    mediaElement.Play();
+            //}
         }
 
         private void bt_opublik_Click(object sender, RoutedEventArgs e)

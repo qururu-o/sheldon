@@ -35,18 +35,27 @@ namespace sheldon.окна
             image.Height = 150;
             image.Stretch = Stretch.UniformToFill;
             image.Stretch = Stretch.Uniform;
-            image.Margin = new Thickness(20, 20, 20, 20);
+           
+            Border border = new Border();
+            border.Margin = new Thickness(20, 20, 20, 20);
+            border.Child = image;
+            border.BorderThickness = new Thickness(4);
+            border.BorderBrush = Brushes.Black;
+            //border.Padding = new Thickness(1);
+            border.Height = image.Height;
+            border.Width = image.Width;
             TextBox LABLE = new TextBox();
-            LABLE.Width = 200;
-            LABLE.Height = 100;
+            LABLE.Width = 100;
+            LABLE.Height = 50;
             LABLE.BorderBrush = Brushes.White;
             TextBlock textBlockkk = new TextBlock();
             LABLE.Name = "LABEL_";
             textBlockkk.Name = "tbk_2";
+           
+
             SolidColorBrush brush = new SolidColorBrush(Color.FromArgb(0xFF, 0xFF, 0xF7, 0xE4));
             LABLE.Background = brush;
-
-            s_p.Children.Add(image);
+            s_p.Children.Add(border);
             s_p3.Children.Add(LABLE);
             s_p2.Children.Add(textBlockkk);
             string f_a, i_a;
@@ -80,19 +89,22 @@ namespace sheldon.окна
                     string janr = rdr.GetString(11);
                     int kol_vo_f = rdr.GetInt32(12);
                     string prom = rdr.GetString(13);
-                   
-                        foreach (var child in s_p.Children)
+
+                    foreach (var child in s_p.Children)
+                    {
+                        if (child is Border borde)
                         {
-                            if (child is Image imagee && imagee.Name == $"image_act")
+                            if (borde.Child is Image imagee && imagee.Name == "image_act")
                             {
                                 imagee.Source = bitmapImage;
                             }
                         }
+                    }
                     foreach (var childrr in s_p3.Children)
                     {
                         if (childrr is TextBox lll && lll.Name == $"LABEL_")
                         {
-                            lll.Text = $"\n\n\n\tАктер\n\t{f_a} {i_a}\n\n\t";
+                            lll.Text = $"Актер\n{f_a} {i_a}";
 
                         }
                        
@@ -102,7 +114,7 @@ namespace sheldon.окна
                         
                         if (childr is TextBlock textBlo && textBlo.Name == $"tbk_2")
                         {
-                            textBlo.Text = $"\n\n\n\tКарьера\n\t{kariera}\n\n\tРост\n\t{rost}\n\n\tДата рождения\n\t{data_r} * {zz} * {let}\n\n\tМесто рождения\n\t{stana}, {shat}, {gorod}\n\n\tЖанры\n\t{janr}\n\n\tВсего фильмов\n\t{kol_vo_f}, {prom}";
+                            textBlo.Text = $"\n\n\nОб актере\n\n\nКарьера\n{kariera}\n\nРост\n{rost}\n\nДата рождения\n{data_r} * {zz} * {let}\n\nМесто рождения\n{stana}, {shat}, {gorod}\n\nЖанры\n{janr}\n\nВсего фильмов\n{kol_vo_f}, {prom}";
                         }
                     }
 

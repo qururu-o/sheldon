@@ -26,10 +26,10 @@
             <Label Content="Описание сериала"  FontSize="17" HorizontalAlignment="Left" Margin="49,520,0,0" VerticalAlignment="Top" Height="32" Width="195"/>
 
             <StackPanel x:Name="vvvvv" HorizontalAlignment="Left" Height="308" Margin="71,180,0,0" VerticalAlignment="Top" Width="602">
-                <MediaElement MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"  x:Name="mediaElement"></MediaElement>
+                <MediaElement LoadedBehavior="Manual" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"  x:Name="mediaElement"></MediaElement>
             </StackPanel>
 
-            <Image MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" x:Name="pleer" MouseLeftButtonDown="pleer_MouseLeftButtonDown" HorizontalAlignment="Left" Visibility="Hidden" Margin="351,300,0,0" VerticalAlignment="Top"  Height="55" Width="65"  Source="C:\Users\admin\OneDrive\Рабочий стол\колледж\3 курс\Новая папка\sheldon\картинки\DVDPlayer_22688.png"/>
+            <Image MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" x:Name="pleer" MouseLeftButtonUp="pleer_MouseLeftButtonUp"  HorizontalAlignment="Left" Visibility="Hidden" Margin="351,300,0,0" VerticalAlignment="Top"  Height="55" Width="65"  Source="C:\Users\admin\OneDrive\Рабочий стол\колледж\3 курс\Новая папка\sheldon\картинки\DVDPlayer_22688.png"/>
             <ComboBox MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" SelectionChanged="seriya_SelectionChanged" x:Name="seriya" Visibility="Hidden" HorizontalAlignment="Left" Height="30" Margin="91,203,0,0" VerticalAlignment="Top" Width="100"/>
             <ComboBox MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" x:Name="seson" Visibility="Hidden" HorizontalAlignment="Left" Height="30" Margin="221,203,0,0" VerticalAlignment="Top" Width="100"/>
 

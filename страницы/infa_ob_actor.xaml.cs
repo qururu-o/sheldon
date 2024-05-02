@@ -82,11 +82,18 @@ namespace sheldon.страницы
 
                         Image image = new Image();
                         image.Name = "image_act_" + a_id.ToString();
-                        image.Width = 100;
-                        image.Height = 150;
+                        image.Width = 150;
+                        image.Height = 230;
                         image.Stretch = Stretch.UniformToFill;
                         image.Stretch = Stretch.Uniform;
-                        image.Margin = new Thickness(20, 20, 20, 20);
+                        Border border = new Border();
+                        border.Margin = new Thickness(20, 20, 20, 20);
+                        border.Child = image;
+                        border.BorderThickness = new Thickness(4);
+                        border.BorderBrush = Brushes.Black;
+                        //border.Padding = new Thickness(1);
+                        border.Height = image.Height;
+                        border.Width = image.Width;
                         image.MouseDown += Image_Click;
 
                         ToolTip toolTip = new ToolTip();
@@ -95,6 +102,7 @@ namespace sheldon.страницы
 
                         TextBlock textBlock = new TextBlock();
                         textBlock.Name = "tbk_" + a_id.ToString();
+                        textBlock.FontSize = 20;
                         SolidColorBrush brush = new SolidColorBrush(Color.FromArgb(0xFF, 0xFF, 0xF7, 0xE4));
                         textBlock.Background = brush;
                         a_id++;
@@ -103,7 +111,7 @@ namespace sheldon.страницы
                         Grid.SetColumn(stackPanel, j);
 
 
-                        stackPanel.Children.Add(image);
+                        stackPanel.Children.Add(border);
                         stackPanel.Children.Add(textBlock);
 
                         Grid.SetRow(stackPanel, i);
@@ -142,11 +150,14 @@ namespace sheldon.страницы
                         {
                             if (child is TextBlock textBlock && textBlock.Name == $"tbk_{akterishka}")
                             {
-                                textBlock.Text = $"\n\n\n\tАктер\n\t{f_a} {i_a}\n\n\tРоль\n\t{f_p} {i_p}";
+                                textBlock.Text = $"\n\n\n    Актер\n    {f_a} {i_a}\n\n    Роль\n    {f_p} {i_p}";
                             }
-                            if (child is Image image && image.Name == $"image_act_{akterishka}")
+                            if (child is Border borde)
                             {
-                                image.Source = bitmapImage;
+                                if (borde.Child is Image imagee && imagee.Name == $"image_act_{akterishka}")
+                                {
+                                    imagee.Source = bitmapImage;
+                                }
                             }
                         }
                     }

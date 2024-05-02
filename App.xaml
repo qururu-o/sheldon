@@ -6,13 +6,13 @@
     <Application.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="FontFamily" Value="Monotype Corsiva"></Setter>
-            <Setter Property="FontSize" Value="20"></Setter>
+            <Setter Property="FontSize" Value="15"></Setter>
             
         </Style>
         <Style TargetType="TextBox">
             <Setter Property="FontFamily" Value="Monotype Corsiva"></Setter>
             <Setter Property="Background" Value="#C3A273"></Setter>
-            <Setter Property="FontSize" Value="20"></Setter>
+            <Setter Property="FontSize" Value="15"></Setter>
 
         </Style>
         <Style TargetType="Button">
